@@ -79,7 +79,7 @@ func main() {
 	router.HandleFunc("/cars/{id}", DeleteCar).Methods("DELETE")
 
 	handler := cors.Default().Handler(router)
-	log.Fatal(http.ListenAndServe(":8081", handler))
+	log.Fatal(http.ListenAndServe(":8080", handler))
 }
 func indexPageHandler(response http.ResponseWriter, request *http.Request) {
 	tmpl := template.Must(template.ParseFiles("layout.html"))
